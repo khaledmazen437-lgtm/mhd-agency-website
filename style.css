@@ -1,0 +1,721 @@
+/* --- إعدادات الألوان والخطوط والمتغيرات --- */
+:root {
+    --bg-color: #030508; /* لون احتياطي */
+    --neon-blue: #00f3ff;
+    --neon-purple: #bc13fe;
+    --text-color: #ffffff;
+    --overlay-color: rgba(3, 5, 8, 0.75); /* درجة التغميق فوق الصورة */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Cairo', sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- الهيدر (القائمة) --- */
+header {
+    position: fixed; /* تثبيت الهيدر فوق الصورة */
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    /* خلفية زجاجية للهيدر */
+    background: rgba(3, 5, 8, 0.5);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ccc;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    position: relative;
+}
+
+nav a:hover, nav a.active {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+/* --- القسم الرئيسي (Hero Section) مع الصورة --- */
+.hero {
+    height: 100vh; /* يملأ الشاشة بالكامل */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+
+    /* --- إعدادات خلفية الصورة --- */
+    /* السطر ده بيحط طبقة سوداء شفافة فوق الصورة عشان الكلام يبان */
+    background-image:  url('Gemini_Generated_Image_lr5i8alr5i8alr5i.png'); 
+    background-size: cover; /* الصورة تغطي المساحة كلها */
+    background-position: center; /* الصورة تتوسطن */
+    background-attachment: fixed; /* تأثير تثبيت الخلفية عند السكرول (Parallax) */
+}
+
+.hero-content {
+    z-index: 2; /* عشان الكلام يكون فوق الخلفية */
+    max-width: 800px;
+}
+.hero h1 {
+    font-size: 4rem; /* صغرت الخط سنة بسيطة عشان مياكلش الشاشة */
+    line-height: 1.5; /* دي المسافة بين السطر العربي و MHD TECH */
+    margin-bottom: 30px; /* المسافة بين العنوان والبراغراف اللي تحته */
+    text-transform: uppercase;
+}
+
+.hero h1 span {
+    display: block; /* دي هتخلي MHD TECH تنزل في سطر مستقل مرتاح */
+    margin-top: 10px; /* مسافة إضافية فوق الكلمة الإنجليزي بس */
+    color: #ffc400;
+    text-shadow: 0 0 20px var(--neon-blue), 0 0 50px var(--neon-blue);
+    letter-spacing: 5px; /* مسافة بين حروف كلمة MHD TECH نفسها */
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: #ddd;
+    max-width: 700px; /* عرض مناسب عشان السطر ميطولش قوي */
+    margin: 0 auto 50px auto; /* توسيط البراغراف مع مسافة 50 بكسل تحته */
+    line-height: 2; /* ده بقى السر! بيخلي سطور الكلام بعيدة عن بعض ومريحة للقراءة */
+}
+/* --- زرار النيون السحري --- */
+.neon-btn {
+    padding: 18px 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--bg-color);
+    background: var(--neon-blue);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.4s ease;
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 50px var(--neon-blue);
+}
+
+.neon-btn:hover {
+    background: #fff;
+    color: var(--neon-blue);
+    box-shadow: 0 0 25px #fff, 0 0 70px var(--neon-blue), 0 0 100px var(--neon-purple);
+    transform: translateY(-5px); /* حركة بسيطة للأعلى */
+}
+
+/* --- تنسيق قسم الخدمات --- */
+/* استبدل كود .services القديم بده */
+/* استبدل كود .services القديم بده */
+.services {
+    padding: 100px 5%;
+    text-align: center;
+    
+    /* تدرج لوني من الأسود للكحلي العميق */
+    background: linear-gradient(180deg, #020305 0%, #0a0e1f 50%, #150a21 100%);
+    
+    /* (اختياري) إضافة خط نيون رفيع يفصل بين الهيرو والخدمات */
+    border-top: 1px solid rgba(0, 243, 255, 0.1);
+    box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5); /* ضل عشان يفصل السكاشن */
+}
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 60px;
+    color: #fff;
+}
+
+.section-title span {
+    color: var(--neon-purple);
+    text-shadow: 0 0 15px var(--neon-purple);
+}
+
+/* --- حاوية الكروت --- */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* عشان لو الشاشة صغرت الكروت تنزل تحت بعض */
+}
+
+/* --- تصميم الكارت الزجاجي --- */
+.card {
+    background: rgba(255, 255, 255, 0.03); /* شفافية عالية */
+    backdrop-filter: blur(10px); /* تأثير الزجاج المغبش */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 350px;
+    transition: 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* حركة الكارت لما الماوس ييجي عليه */
+.card:hover {
+    transform: translateY(-10px); /* يطلع لفوق */
+    border-color: var(--neon-blue); /* الحدود تنور */
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.2); /* ضوء خافت حول الكارت */
+}
+
+/* --- الأيقونات داخل الكارت --- */
+.card .icon {
+    font-size: 3rem;
+    color: var(--neon-blue);
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.card:hover .icon {
+    color: var(--neon-purple); /* الأيقونة تغير لونها */
+    text-shadow: 0 0 15px var(--neon-purple);
+    transform: scale(1.1);
+}
+
+/* --- نصوص الكارت --- */
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.card p {
+    color: #aaa;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* --- تنسيق قسم الأعمال --- */
+
+.portfolio {
+    padding: 100px 5%;
+    text-align: center;
+    
+    /* تدرج من الكحلي للتركواز للبنفسجي */
+    background: radial-gradient(circle at top left, #2b0c5e, transparent 60%),
+                radial-gradient(circle at bottom right, #004e64, transparent 60%),
+                #0f172a; /* لون القاعدة */
+}
+/* تعديل بسيط للكروت عشان تبقى واضحة فوق الألوان دي */
+.project-card {
+    background: rgba(0, 0, 0, 0.4); /* خلفية سوداء شفافة للكارت نفسه */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.portfolio-container {
+    display: grid;
+    /* التوزيع التلقائي: بيحط كروت جنب بعض حسب مساحة الشاشة */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+/* --- كارت المشروع --- */
+.project-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden; /* عشان الكلام لما ينزل تحت الصورة يختفي */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    height: 300px; /* ارتفاع ثابت للكارت */
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* الصورة تملأ الكارت بدون ما تمط */
+    transition: 0.5s ease;
+}
+
+/* لما الماوس ييجي على الكارت، الصورة تكبر سنة (Zoom In) */
+.project-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.4); /* نغمق الصورة عشان الكلام الأبيض يبان */
+}
+
+/* --- المعلومات اللي بتظهر (الستارة) --- */
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, var(--neon-purple), transparent); /* تدرج بنفسجي */
+    
+    /* الحركة السحرية */
+    transform: translateY(100%); /* مخفي تحت الكارت */
+    transition: 0.5s ease;
+    text-align: right; /* عشان العربي */
+}
+
+/* لما الماوس ييجي، طلع المعلومات لفوق */
+.project-card:hover .project-info {
+    transform: translateY(0);
+}
+
+.project-info h3 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+}
+
+.project-info p {
+    color: var(--neon-blue);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* زرار المعاينة الصغير */
+.view-btn {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    border: 1px solid #fff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.view-btn:hover {
+    background: var(--neon-blue);
+    border-color: var(--neon-blue);
+    color: #000;
+}
+
+
+/* --- تنسيق قسم التواصل الملون --- */
+.contact {
+    /* الخلفية الملونة: تدرج قوي من الأزرق للبنفسجي */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 80px 5% 20px 5%; /* مسافات مريحة */
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+/* جملة فرعية تحت العنوان */
+.contact-desc {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    opacity: 0.9;
+}
+
+/* حاوية بتقسم الشاشة نصين (معلومات وفورم) */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap; /* عشان الموبايل */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+
+/* --- معلومات التواصل (اليمين) --- */
+.contact-info {
+    text-align: right;
+    flex: 1;
+    min-width: 300px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* دايرة */
+    transition: 0.3s;
+}
+
+.info-item:hover i {
+    background: #fff;
+    color: #764ba2; /* يعكس اللون لما تقف عليه */
+    transform: scale(1.1);
+}
+
+/* أيقونات السوشيال */
+.social-icons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background: #fff;
+    color: #ff0055; /* لون مختلف للهوفر */
+    transform: translateY(-5px);
+}
+
+/* --- الفورم (الشمال) --- */
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.15); /* زجاجي فاتح */
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.9); /* أبيض عشان الكتابة تبان */
+    border: none;
+    border-radius: 10px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* زرار الإرسال */
+.send-btn {
+    width: 100%;
+    padding: 15px;
+    background: #fff;
+    color: #764ba2;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    background: #222; /* يتحول لأسود شيك */
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* --- شريط الحقوق اللي تحت خالص --- */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+
+
+/* --- تنسيق قسم من نحن --- */
+.about {
+    padding: 100px 5%;
+    background-color: #030508;
+    overflow: hidden; /* عشان لو البرواز خرج بره */
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px; /* مسافة بين الصورة والكلام */
+    flex-wrap: wrap; /* عشان الموبايل */
+}
+
+/* --- تنسيق الصورة والبرواز --- */
+.about-img-wrapper {
+    position: relative;
+    width: 350px;
+    height: 400px;
+}
+
+.about-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2; /* عشان الصورة تكون فوق البرواز */
+    filter: grayscale(20%); /* تأثير أبيض وأسود خفيف شيك */
+    transition: 0.5s;
+}
+
+.about-img-wrapper:hover img {
+    filter: grayscale(0%); /* ترجع ألوان لما تقف عليها */
+}
+
+/* البرواز النيون الخلفي */
+.img-border {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--neon-blue);
+    border-radius: 20px;
+    z-index: 1; /* تحت الصورة */
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+    transition: 0.5s;
+}
+
+/* حركة البرواز لما تقف عالصورة */
+.about-img-wrapper:hover .img-border {
+    top: -10px;
+    left: -10px;
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 30px rgba(188, 19, 254, 0.4);
+}
+
+/* --- تنسيق الكلام --- */
+.about-content {
+    flex: 1; /* ياخد باقي المساحة */
+    max-width: 600px;
+    text-align: right; /* محاذاة لليمين عشان ده تعريف شخصي */
+}
+
+.subtitle {
+    color: var(--neon-blue);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.bio {
+    color: #ccc;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* --- أيقونات المهارات --- */
+.tech-stack {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.tech-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.tech-item i {
+    color: var(--neon-purple);
+}
+
+.tech-item:hover {
+    border-color: var(--neon-blue);
+    background: rgba(0, 243, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+/* زرار صغير */
+.small-btn {
+    padding: 10px 30px;
+    font-size: 1rem;
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+/* =========================================
+   تنسيقات الموبايل والتابلت (Responsive Design)
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* 1. تظبيط الهيدر والقائمة */
+    header {
+        padding: 15px 5%;
+        flex-direction: column; /* اللوجو فوق والروابط تحت */
+        gap: 15px;
+        background: rgba(3, 5, 8, 0.95); /* تغميق الخلفية عشان الكلام يبان */
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap; /* لو الروابط كتيرة تنزل سطر جديد */
+        justify-content: center;
+        padding: 0;
+    }
+
+    nav a {
+        font-size: 0.9rem; /* تصغير خط الروابط شوية */
+    }
+
+    /* 2. تظبيط الهيرو (أول سكشن) */
+    .hero h1 {
+        font-size: 2.5rem; /* تصغير العنوان الكبير */
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        width: 100%; /* الكلام ياخد عرض الشاشة */
+    }
+
+    /* 3. تقليل الهوامش لكل السكاشن */
+    section {
+        padding: 60px 5% !important; /* تقليل المسافة الفاضية فوق وتحت */
+    }
+
+    .section-title {
+        font-size: 2.2rem; /* تصغير عناوين السكاشن */
+        margin-bottom: 40px;
+    }
+
+    /* 4. سكشن من نحن (الصورة والكلام تحت بعض) */
+    .about-container {
+        flex-direction: column; /* يرص العناصر عمودي */
+        gap: 40px;
+        text-align: center; /* توسيط الكلام */
+    }
+
+    .about-content {
+        text-align: center; /* تأكيد التوسيط */
+    }
+
+    .about-content h2 {
+        text-align: center !important;
+    }
+
+    .tech-stack {
+        justify-content: center; /* توسيط المهارات */
+    }
+
+    /* 5. سكشن الخدمات (الكروت تاخد عرض الشاشة) */
+    .card {
+        width: 100%; /* الكارت يملأ الشاشة */
+        max-width: 100%; 
+    }
+
+    /* 6. سكشن التواصل (الفورم والمعلومات تحت بعض) */
+    .contact-container {
+        flex-direction: column-reverse; /* نخلي الفورم الأول وبعدين المعلومات (اختياري) أو العكس */
+        gap: 40px;
+    }
+
+    .contact-info {
+        text-align: center; /* توسيط المعلومات */
+        min-width: 100%;
+    }
+
+    .info-item {
+        justify-content: center; /* توسيط الأيقونة والرقم */
+        flex-direction: column; /* الأيقونة فوق والرقم تحتها */
+        gap: 10px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .contact-form {
+        min-width: 100%; /* الفورم ياخد العرض كامل */
+    }
+}
+
+/* --- تنسيق سكشن المجتمع --- */
+.community {
+    padding: 100px 5%;
+    background-color: #030508;
+    text-align: center;
+    /* خلفية هادية عشان نفصل بين الأعمال والتواصل */
+    background-image: radial-gradient(circle at 50% 50%, rgba(0, 243, 255, 0.05) 0%, transparent 60%);
+}
+
+.community-desc {
+    color: #aaa;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* تنسيق زرار الانضمام */
+.community-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: transparent;
+    border: 1px solid var(--neon-blue);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.community-btn:hover {
+    background: #25D366; /* لون الواتساب الأخضر */
+    border-color: #25D366;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
+    transform: translateY(-3px);
+}
+
+.community-btn i {
+    margin-right: 5px;
+}
